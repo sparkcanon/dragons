@@ -2,17 +2,18 @@
 export ZPLUG_HOME=$(brew --prefix)/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
-zplug 'plugins/tmux', from:oh-my-zsh, defer:3
-zplug 'plugins/history', from:oh-my-zsh, defer:3
-zplug 'plugins/autojump', from:oh-my-zsh, defer:3
-zplug 'plugins/fzf', from:oh-my-zsh, defer:3
+zplug 'plugins/tmux', from:oh-my-zsh
+zplug 'plugins/history', from:oh-my-zsh
+zplug 'plugins/autojump', from:oh-my-zsh
+zplug 'plugins/fzf', from:oh-my-zsh
 
-zplug 'wfxr/forgit', defer:3
-zplug "zsh-users/zsh-syntax-highlighting", defer:1
-zplug 'zsh-users/zsh-autosuggestions', defer:2
-zplug "zsh-users/zsh-history-substring-search", defer:1
-zplug 'zsh-users/zsh-completions', depth:1
+zplug 'wfxr/forgit'
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-history-substring-search"
+zplug 'zsh-users/zsh-autosuggestions'
+zplug 'zsh-users/zsh-completions'
 zplug "spaceship-prompt/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
+zplug "marlonrichert/zsh-autocomplete"
 
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
@@ -31,6 +32,8 @@ has() {
 if zplug check zsh-users/zsh-history-substring-search; then
     bindkey '^[[A' history-substring-search-up
     bindkey '^[[B' history-substring-search-down
+    bindkey -M vicmd 'k' history-substring-search-up
+    bindkey -M vicmd 'j' history-substring-search-down
 fi
 bindkey -v '^?' backward-delete-char
 
@@ -40,11 +43,12 @@ zle -N edit-command-line
 bindkey "^E" edit-command-line
 
 # Exports
-export PATH="/usr/local/sbin:$PATH"
-export PATH="/usr/local/share/git-core/contrib/git-jump:$PATH"
+# export PATH="/usr/local/sbin:$PATH"
+# export PATH="/usr/local/share/git-core/contrib/git-jump:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 export VISUAL=nvim
 export EDITOR="${VISUAL}"
-export TERM="xterm-256color"
+# export TERM="xterm-256color"
 
 # Alias
 alias v="vim"
@@ -79,9 +83,9 @@ export FZF_COMPLETION_TRIGGER='**'
 
 # Starship
 SPACESHIP_PROMPT_ADD_NEWLINE=false
-SPACESHIP_CHAR_SYMBOL="▸ "
+SPACESHIP_CHAR_SYMBOL="◗ "
 
 # zcompdump location
-compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
+# compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
