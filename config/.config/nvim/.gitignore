@@ -1,0 +1,6 @@
+/tmp
+*.swp
+.DS_Store
+.netrwhist
+/plugin/packer_compiled.vim
+/pack

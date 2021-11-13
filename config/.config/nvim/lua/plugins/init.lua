@@ -1,6 +1,6 @@
 local fn = vim.fn
 
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+local install_path = fn.stdpath("config") .. "/pack/packer/opt/packer.nvim"
 
 if fn.empty(fn.glob(install_path)) > 0 then
 	fn.system({
@@ -15,6 +15,9 @@ end
 
 vim.cmd("packadd packer.nvim")
 local packer = require("packer")
+packer.init({
+	package_root = vim.fn.stdpath("config") .. "/pack",
+})
 
 packer.startup({
 	function(use)
