@@ -1,0 +1,2 @@
+config/.config/nvim/tmp/*
+.DS_Store
