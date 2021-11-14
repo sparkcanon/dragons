@@ -14,6 +14,7 @@ zplug 'zsh-users/zsh-autosuggestions'
 zplug 'zsh-users/zsh-completions'
 zplug "spaceship-prompt/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 zplug "marlonrichert/zsh-autocomplete"
+zstyle ':autocomplete:*' min-input 1
 
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
