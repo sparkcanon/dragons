@@ -45,6 +45,7 @@ bindkey "^E" edit-command-line
 # Exports
 # export PATH="/usr/local/sbin:$PATH"
 # export PATH="/usr/local/share/git-core/contrib/git-jump:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export VISUAL=nvim
 export EDITOR="${VISUAL}"

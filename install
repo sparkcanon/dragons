@@ -5,7 +5,8 @@ STOW_FOLDERS="config,tmux,zsh,emacs,vim"
 pushd $DOTFILES
 for folder in $(echo $STOW_FOLDERS | sed "s/,/ /g")
 do
-	stow -D $folder
-	stow $folder
+	echo "==== $folder ===="
+	stow --verbose=2 -D $folder
+	stow --verbose=2 $folder
 done
 popd
