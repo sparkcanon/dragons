@@ -8,13 +8,13 @@ zplug 'plugins/autojump', from:oh-my-zsh
 zplug 'plugins/fzf', from:oh-my-zsh
 
 zplug 'wfxr/forgit'
-zplug "zsh-users/zsh-syntax-highlighting"
-zplug "zsh-users/zsh-history-substring-search"
+zplug 'zsh-users/zsh-syntax-highlighting'
+zplug 'zsh-users/zsh-history-substring-search'
 zplug 'zsh-users/zsh-autosuggestions'
 zplug 'zsh-users/zsh-completions'
-zplug "spaceship-prompt/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
-zplug "marlonrichert/zsh-autocomplete"
+zplug 'marlonrichert/zsh-autocomplete'
 zstyle ':autocomplete:*' min-input 1
+zplug "jackharrisonsherlock/common", as:theme
 
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
@@ -60,6 +60,9 @@ alias simulator="open /Applications/Xcode.app/Contents/Developer/Applications/Si
 alias ..="cd .."
 alias ...="cd ../../"
 alias ....="cd ../../../"
+alias lc="colorls"
+alias ll="colorls -lA --sd"
+alias lt="colorls --sd --gs -lA --tree=1"
 
 alias gap='git add -p'
 alias gcb='git checkout -b'
@@ -82,10 +85,6 @@ export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git --exclu
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS="--ansi"
 export FZF_COMPLETION_TRIGGER='**'
-
-# Starship
-SPACESHIP_PROMPT_ADD_NEWLINE=false
-SPACESHIP_CHAR_SYMBOL="◗ "
 
 # zcompdump location
 # compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
