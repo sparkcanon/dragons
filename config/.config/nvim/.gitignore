@@ -1,6 +1,0 @@
-/tmp
-*.swp
-.DS_Store
-.netrwhist
-/lua/packer_compiled.lua
-/pack
