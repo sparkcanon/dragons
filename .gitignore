@@ -1,3 +1,9 @@
 config/.config/nvim/tmp/*
+config/.config/coc/*
+config/.config/yarn/*
+config/.config/configstore/*
+config/.config/gatsby/*
+config/.config/iterm2/*
+config/.config/lua-language-server/
 config/.config/nvim/lua/packer_compiled.lua
 .DS_Store
