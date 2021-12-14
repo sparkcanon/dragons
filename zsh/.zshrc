@@ -51,7 +51,7 @@ bindkey "^E" edit-command-line
 # export PATH="/usr/local/share/git-core/contrib/git-jump:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
-export VISUAL=nvim
+export VISUAL=vim
 export EDITOR="${VISUAL}"
 # export TERM="xterm-256color"
 
